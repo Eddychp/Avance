@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('people_id');
             $table->foreign('people_id')->references('id')->on('people')->onDelete('cascade');
             $table->string('code');
-            $table->string('type');
-            $table->enum('status',['activo','inactivo']);
+            $table->enum('type',['activo','inactivo']);
+            $table->enum('status',['presidente','secretario','tesorera','vocal']);
             $table->unsignedBigInteger('stand_id');
             $table->foreign('stand_id')->references('id')->on('stands')->onDelete('cascade');
             $table->unsignedBigInteger('period_id');
